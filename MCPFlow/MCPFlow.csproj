@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Jonathan Favorite</Authors>
+    <PackageIcon>icon.jpg</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.8</Version>
+  </PropertyGroup>
+
+  <Target Name="CopyRootReadme" BeforeTargets="Pack">
+    <Copy SourceFiles="$(MSBuildProjectDirectory)/../README.md" DestinationFiles="$(MSBuildProjectDirectory)/README.md" />
+  </Target>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+    <None Include="icon.jpg" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
+</Project>
